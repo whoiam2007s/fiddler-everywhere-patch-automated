@@ -116,8 +116,9 @@ jobs:
         run: |
           try {
             # Build the download URLs
-            $YuiFiddlerUrl = "https://objects.githubusercontent.com/github-production-release-asset-2e65be/792691782/24492f28-19da-4984-b8a5-b36dfda35943?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250208%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250208T033437Z&X-Amz-Expires=300&X-Amz-Signature=8d41349fdb1114b09323cc65ad806841f3ae33799ad9d471dcd3cb49a2521ec2&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dyui-fiddler-win32-x86_64-v1.1.3.dll&response-content-type=application%2Foctet-stream"
-            $YuiHostPolicyUrl = "https://objects.githubusercontent.com/github-production-release-asset-2e65be/792691782/7df1a761-629f-474e-a059-bad2b8c52494?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250208%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250208T033739Z&X-Amz-Expires=300&X-Amz-Signature=c74572c560431066c8a0a83a4d0d494741b7edd0594cca81febb130ff314369d&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dyui-hostpolicy-win32-x86_64-v1.1.3.dll&response-content-type=application%2Foctet-stream"
+
+            $YuiFiddlerUrl = "https://github.com/project-yui/Yui-patch/releases/download/$env:Yui_RELEASE/$env:YUI_NAME-$env:Yui_FIDDLER_NAME-win32-x86_64-$env:Yui_RELEASE.dll"
+            $YuiHostPolicyUrl = "https://github.com/project-yui/Yui-patch/releases/download/$env:Yui_RELEASE/$env:YUI_NAME-hostpolicy-win32-x86_64-$env:Yui_RELEASE.dll"
             
             # Print the URLs to ensure they're correct
             Write-Host "Downloading files from $env:Yui_RELEASE"
